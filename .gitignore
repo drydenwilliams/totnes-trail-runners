@@ -1,0 +1,24 @@
+.DS_Store
+*.log
+.htaccess
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+
+
+# Keep these files out of the repo
+/wp-content/themes/twenty*
+/sitemap.*
+/wp-config.php
+*.sql
+
+# Hidden files
+*.DS_Store
+*Thumbs.db
+*.sass-cache*

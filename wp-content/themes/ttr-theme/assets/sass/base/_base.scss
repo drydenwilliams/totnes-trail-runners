@@ -1,0 +1,192 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+@font-face {
+    font-family: Roboto-reg;
+    src: url(../mattsPortfolioTheme/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto-light;
+    src: url(../mattsPortfolioTheme/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-bold;
+    src: url(../mattsPortfolioTheme/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf);
+}
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+	color: palette(black, base);
+  font-size: $base__font-size;
+  font-family: $font-family--primary;
+  //line-height: ($base__line/$base__font-size);
+  margin-top: em(58px);
+  @include mq(small) {
+        margin-top: em(82px);
+    }
+  .slick-prev,
+    .slick-next {
+        @include mq(small) {
+            display: none !important;
+        }
+    }
+}
+
+
+
+
+// Text
+
+h1 {
+	@extend %hdln-prim;
+}
+
+h2 {
+	@extend %hdln-sec;
+}
+
+h3 {
+	font-size: em(18px);
+}
+
+h4 {
+	margin-top: em(22px, 14px);
+	margin-bottom: em(32px, 14px);
+	color: palette(grey, x-light);
+	text-transform: uppercase;
+	letter-spacing: $letter-space;
+	font-weight: $font-weight--medium;
+	font-size: em(14px);
+}
+
+a {
+	color: palette(grey, dark);
+	text-decoration: none;
+	font-weight: $font-weight--medium;
+}
+
+p {
+	margin: 0 0 em(30px, 18px);
+	font-weight: $font-weight--light;
+	font-size: em(18px);
+	line-height: (27px/18px);
+}
+
+blockquote {
+	@media (min-width: 769px) {
+		margin: em(32px, 24px) 0;
+		padding: 0 0 0 5%;
+		border-left: em(8px, 24px) solid palette(grey, xx-light);
+		font-size: em(24px);
+	}
+	font-weight: $font-weight--light;
+	font-style : italic;
+	font-size : em(20px);
+}
+
+
+
+.rule {
+  border: 0;
+  border-top: 2px solid black;
+  @include m(small) {
+    width: 170px;
+    margin-top: em(20px);
+    margin-bottom: em(40px)
+  }
+  &--yellow {
+    border-top: 2px solid $yellow;
+  }
+  @include m(tiny) {
+    width: 50px;
+    margin-top: em(15px);
+    margin-bottom: em(15px);
+  }
+}
+
+
+// Lists
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+
+// Images
+
+figure {
+	margin: 0;
+}
+
+img {
+  // margin-bottom: em(24px);
+  max-width: 100%;
+  height: auto;
+}
+
+
+// Form elements
+
+input,
+textarea {
+	display: block;
+	padding: 15px;
+	width: 100%;
+	outline: 0;
+	border: 0;
+}
+
+input:focus,
+textarea:focus {
+	transition: $trns_duration;
+}
+
+// Button
+
+button {
+	outline: 0;
+}
+
+// Layout
+
+footer {
+	border-top: 1px solid palette(grey, xx-light);
+	p {
+		font-size: em(16px);
+		margin-top: em(22px, 16px);
+	}
+}
+
+
+
+// Wordpress
+//
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}

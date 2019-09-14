@@ -1,0 +1,211 @@
+// ==========================================================================
+// sections
+// ==========================================================================
+
+.masthead {
+    position: relative;
+    text-align: center;
+    background-image: url("../mattsPortfolioTheme/img/header-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    min-height: 332px;
+    &:before {
+        @extend %pseudos;
+        background-color: rgba(255, 255, 0, 0.7);
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    &:after {
+        @extend %pseudos;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        background-image: url("../mattsPortfolioTheme/img/crosses-white.png");
+        background-repeat: repeat;
+        background-size: 88px 370px;
+        //100px 433px;
+        opacity: 0.3;
+    }
+    .grid {
+        min-height: 332px;
+    }
+    .masthead__logo {
+        margin-bottom: 60px;
+    }
+    .grid__col--10 {
+        opacity: 0;
+        height: 0;
+        position: relative;
+        z-index: -1;
+    }
+    .news-btn {
+        &:hover {
+            background-color: black;
+            color: $yellow;
+            border-color: black;
+            opacity: 1;
+        }
+    }
+    @include m(open) {
+        &:before {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        &:after {
+            background-image: url("../mattsPortfolioTheme/img/crosses-yellow.png");
+            opacity: 0.3;
+        }
+        .grid__col--4 {
+            display: none;
+        }
+        .grid__col--10 {
+            opacity: 1;
+            height: auto;
+            position: relative;
+            z-index: 1;
+            //           .social__item--twitter {
+            //               position: absolute;
+            // left: 50%;
+            // margin-left: -38px;
+            // top: -75px;
+            //           }
+            //           .tweet-text {
+            //               margin-bottom: 0;
+            //           }
+            .headline-primary--grouped {
+                margin-bottom: 0;
+            }
+            h2, p {
+                color: white;
+                border-color: $yellow;
+            }
+            .social__item--twitter {
+                margin: auto;
+                display: block;
+                margin-bottom: 10px;
+                background-size: 80px;
+                width: 40px;
+                height: 40px;
+                &:hover {
+                    background-position: -40px 0;
+                }
+                @include mq(small) {
+                    display: none;
+                }
+            }
+        }
+        .news-btn {
+            &:hover {
+                background-color: $yellow;
+                color: black;
+                border-color: $yellow;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+
+
+section > .feature {
+    margin-top: em(35px);
+}
+
+.about_section,
+.skills_section {
+    background: repeating-linear-gradient(-45deg, rgba(246, 246, 246, 1), rgba(246, 246, 246, 1) 2px, white 2px, white 10px);
+}
+
+.work_section {
+    background-color: rgba(241, 241, 241, 1);
+}
+
+.testimonials_section {
+    background-color: rgba(102, 102, 102, 1);
+    .section__header {
+        h2, hr {
+            color: white;
+            border-color: white;
+        }
+    }
+}
+
+.contact_section {
+    background-color: $yellow;
+}
+
+.panel {
+    @extend %panel-default;
+    .grid__col--6,
+    .grid__col--8 {
+        text-align: center;
+    }
+    @include m(centered) {
+        @extend %panel-default;
+        @extend %center-align;
+    }
+
+    @include m(padded) {
+        @extend %panel-padding;
+        @include m(centered) {
+            @extend %center-align;
+            @extend %panel-padding;
+        }
+    }
+}
+
+.latest-tweets {
+    .slider {
+        li {
+            p {
+                text-align: center;
+                color: #ffff00;
+                font-family: 'Georgia';
+                font-style: italic;
+                line-height: 1.3;
+                font-size: em(24px);
+                margin-bottom: em(20px);
+                a {
+                    color: white;
+                }
+            }
+            time {
+                font-size: 15px;
+                color: white;
+                font-family: 'Roboto-reg';
+                font-style: normal;
+                    display: block;
+    margin-top: 20px;
+            }
+        }
+    }
+}
+
+.site-footer {
+    border-top: 0;
+    text-align: center;
+    background-color: $black;
+    .site-footer__logo {
+        border-bottom: 2px solid $yellow;
+        padding-bottom: em(27px);
+        margin-top: em(55px);
+        margin-bottom: em(27px);
+    }
+    .credit {
+        color: white;
+        font-size: em(12px);
+        margin-bottom:0;
+        a {
+            font-family: 'Roboto-bold';
+            font-weight: bold;
+        }
+    }
+}

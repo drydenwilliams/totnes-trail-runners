@@ -1,0 +1,19 @@
+.osmap img {
+	max-width:none!important;
+	padding:0!important;
+	margin:0!important;
+	border:none!important;
+	box-shadow:none!important;
+}
+
+.osmap {
+border: 1px solid #DDD;
+padding: 6px;
+clear:both;
+background-color: transparent!important;
+}
+
+.route-info th {
+text-align: center;
+line-height: 1.5em;
+}

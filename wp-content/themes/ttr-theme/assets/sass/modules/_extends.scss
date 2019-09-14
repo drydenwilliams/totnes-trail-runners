@@ -1,0 +1,73 @@
+// ==========================================================================
+// Placeholders
+// ==========================================================================
+
+// Nav Items
+
+%nav-item-horz {
+  @include mq(medium) {
+    display: inline-block;
+    margin: 0 em(12px);
+  }
+}
+
+%nav-item-link {
+  font-weight: $font-weight--light;
+  text-align: center;
+  font-size: em(16px);
+  display: block;
+  text-transform: uppercase;
+  @include mq(small) {
+    border-bottom-color: palette(grey, xx-light);
+    padding-top: em(14px, 18px);
+    padding-bottom: em(14px, 18px);
+  }
+}
+
+%nav-item-on {
+  color: #ffff00;
+}
+
+// Headlines
+
+%hdln-prim {
+  color: palette(black, base);
+  font-weight: $font-weight--thin;
+  font-size: em(30px);
+  margin-top: 0;
+}
+%hdln-sec {
+  color: palette(black, base);
+  letter-spacing: $letter-space;
+  font-weight: $font-weight--bold;
+  font-style: italic;
+  font-size: em(30px);
+  font-family: $font-family--secondary;
+}
+
+// Buttons
+
+%btn {
+  display: inline-block;
+  border: 2px solid black;
+  color: black;
+  font-size: em(16px);
+  text-transform: uppercase;
+  min-width: em(160px);
+  padding-top: em(10px);
+  padding-bottom: em(10px);
+  &:hover {
+    opacity: .75;
+  }
+  &:active {
+    opacity: initial;
+  }
+
+}
+
+// Icons
+
+%icn--ui {
+	line-height: 0;
+	cursor: pointer;
+}

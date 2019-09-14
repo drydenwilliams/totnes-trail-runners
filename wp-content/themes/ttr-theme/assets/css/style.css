@@ -1,0 +1,15 @@
+body {
+  background: blue;
+}
+
+.card-meta {
+  padding: 1.25rem;
+}
+
+.job__item {
+  margin-bottom: 40px;
+}
+
+.job-navigation .category {
+  float: right;
+}

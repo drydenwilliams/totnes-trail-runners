@@ -1,0 +1,186 @@
+.portfolio-grid {
+    .grid {
+        margin-bottom: em(30px);
+        @include m(hidden) {
+            display: none;
+        }
+        @include mq(small) {
+            margin-bottom: 0;
+            &:after {
+                display: block;
+            }
+        }
+
+    }
+    @include e(item) {
+        position: relative;
+        &:last-of-type {
+            float: left !important;
+            @include mq(small) {
+                float: none !important;
+                  margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+
+.centered-buttons {
+    text-align: center;
+    margin-top: em(60px);
+}
+
+.overlay-figure {
+    position: relative;
+    //display: table;
+}
+
+.overlay-figure-content {
+    width: 100%;
+    height: 100%;
+    -webkit-transform: scale(1) translateZ(0);
+    -moz-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    -webkit-transition: -webkit-transform 0.5s ease 0.50s;
+    -moz-transition: -moz-transform 0.5s ease 0.50s;
+    transition: transform 0.5s ease 0.50s;
+}
+
+
+
+.overlay-figure-content > img {
+    width: 100%;
+}
+
+.overlay-figure-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    opacity: 1;
+    background-color: rgba(255, 255, 0, 0.7);
+}
+
+.overlay-figure:hover
+.overlay-figure-background {
+    opacity: 0;
+}
+
+.overlay-figure-caption:hover
+.overlay-figure-background {
+    opacity: 0;
+}
+
+.overlay-figure-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: opacity ease 0.50s;
+    -moz-transition: opacity ease 0.50s;
+    transition: opacity ease 0.50s;
+}
+
+.overlay-figure:hover
+.overlay-figure-caption {
+    opacity: 0;
+}
+
+.overlay-figure-caption
+.contents {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay-figure-caption
+.contents-stack {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+
+    color: black;
+    padding-top: 7%;
+}
+
+.contents-stack > img {
+    @media (min-width: 768px) {
+        max-width: 70%;
+    }
+    @media (min-width: 868px) {
+        max-width: 80%;
+    }
+    @media (min-width: 920px) {
+        max-width: 100%;
+    }
+}
+
+.overlay-figure-caption
+.title {
+    display: block;
+    margin-bottom: 0;
+    opacity: 0;
+    -webkit-transform: translateY(-100%) translateZ(0);
+    -moz-transform: translateY(-100%) translateZ(0);
+    transform: translateY(-100%) translateZ(0);
+    -webkit-transition: -webkit-transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+    -moz-transition: -moz-transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+    transition: transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+}
+
+.overlay-figure:hover
+.title {
+    opacity: 1;
+    -webkit-transform: translateY(0) translateZ(0);
+    -moz-transform: translateY(0) translateZ(0);
+    transform: translateY(0) translateZ(0);
+}
+
+.overlay-figure
+.separator {
+    display: block;
+    margin: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2px;
+    width: 30%;
+    background-color: white;
+    -webkit-transform: scaleX(0) translateZ(0);
+    -moz-transform: scaleX(0) translateZ(0);
+    transform: scaleX(0) translateZ(0);
+    -webkit-transition: -webkit-transform 0.50s ease 0.50s;
+    -moz-transition: -moz-transform 0.50s ease 0.50s;
+    transition: transform 0.50s ease 0.50s;
+}
+
+.overlay-figure:hover
+.separator {
+    -webkit-transform: scaleX(1) translateZ(0);
+    -moz-transform: scaleX(1) translateZ(0);
+    transform: scaleX(1) translateZ(0);
+}
+
+.overlay-figure-caption
+.text {
+    display: block;
+    margin-top: 0;
+    opacity: 0;
+    -webkit-transform: translateY(100%) translateZ(0);
+    -moz-transform: translateY(100%) translateZ(0);
+    transform: translateY(100%) translateZ(0);
+    -webkit-transition: -webkit-transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+    -moz-transition: -moz-transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+    transition: transform 0.5s ease 0.50s, opacity 0.15s ease 0.50s;
+}
+
+.overlay-figure:hover
+.text {
+    opacity: 1;
+    -webkit-transform: translateY(0) translateZ(0);
+    -moz-transform: translateY(0) translateZ(0);
+    transform: translateY(0) translateZ(0);
+}

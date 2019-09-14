@@ -1,0 +1,66 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+	@include bg-colors($ui-colors);
+  @extend %btn;
+  background-color: transparent;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+    border-radius:0;
+    &:hover{
+      background-color: $yellow;
+      border-color: $yellow;
+    }
+  @include m(active) {
+    background-color: $yellow;
+    border-color: $yellow;
+  }
+  @include m(padding) {
+    margin-top: em(20px);
+    margin-bottom: em(40px);
+  }
+}
+
+[class^="btn--"] {
+  @extend %center-align;
+  @extend %btn;
+  background-color: transparent;
+  margin-bottom: em(20px, 14px);
+  @include mq(medium) {
+    width: auto;
+    display: inline-block;
+    @include doubly(20px);
+  }
+}
+
+
+
+.news-btn {
+  min-width: em(210px);
+}
+
+.masthead--open {
+  .news-btn {
+    border-color: white;
+    color: white;
+    background-color: transparent;
+  }
+}
+
+.linkedin-btn {
+  margin-right: 15px;
+}
+.cv-btn {
+  margin-left: 15px;
+}
+
+.linkedin-btn,
+.cv-btn {
+  @include mq(small) {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+}

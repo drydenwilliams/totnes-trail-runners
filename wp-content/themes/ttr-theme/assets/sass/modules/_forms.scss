@@ -1,0 +1,113 @@
+// ==========================================================================
+// Form Elements
+// ==========================================================================
+
+// .form {
+// 	@include e(label) {
+// 		@include m(hidden) {
+// 			@extend .srt;
+// 		}
+// 		display: block;
+// 		margin-bottom: em(10px);
+// 	}
+
+// 	@include e(input) {
+// 		font-size : em(18px);
+// 		margin-bottom: em(20px, 18px);
+// 		border-bottom: 6px solid palette(grey, x-light);
+// 		border-radius: $br--default;
+// 		background: palette(grey, xx-light);
+// 		color: palette(black, dark);
+// 		font-weight: $font-weight--light;
+
+// 		&:focus {
+// 			border-color: $color-primary;
+// 		}
+// 	}
+
+// 	@include e(btn) {
+// 		@extend %btn;
+// 		background: $color-primary;
+// 	}
+// }
+//
+input,
+textarea {
+  background-color: #ffffbc;
+}
+
+.ninja-forms-required-items {
+	display: none;
+}
+.text-wrap {
+	position: relative;
+	width: 50%;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: em(20px);
+  @include mq(small) {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+.ninja-forms-field-error {
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+.textarea-wrap {
+	position: relative;
+	width: 50%;
+  vertical-align: top;
+  float: right;
+  margin-top: -187px;
+  padding-left: em(20px);
+  @include mq(small) {
+    width: 100%;
+    margin-top: 0;
+    padding-left: 0;
+  }
+}
+.textarea-wrap textarea {
+	height: 237px !important;
+  resize:none;
+}
+
+.submit-wrap {
+	position: relative;
+	margin-top: 30px;
+}
+
+#nf_submit_1, #nf_processing_1 {
+  text-align: center;
+}
+
+
+input[type="submit"] {
+	@extend %btn;
+  min-width: 160px;
+	background-color: transparent;
+  padding-left: 12px !important;
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+    border-radius:0;
+  &:hover {
+    background-color: black;
+  color: $yellow;
+  opacity: 1;
+  }
+  @include mq(small) {
+    margin-top: 0;
+    padding-left: 0;
+    position: relative;
+    left: 0;
+    margin-left: 0;
+  }
+}
+
+
+
+.ninja-forms-req-symbol {
+  display: none;
+}

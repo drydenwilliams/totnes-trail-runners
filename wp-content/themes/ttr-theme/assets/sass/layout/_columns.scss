@@ -1,0 +1,14 @@
+.column-list {
+  p {
+    margin-bottom: 60px;
+  }
+  .column__list-item {
+    display: block;
+    text-transform: uppercase;
+    margin-bottom: em(20px);
+    color: black;
+    @include mq(small) {
+        margin-bottom: em(30px);
+    }
+  }
+}

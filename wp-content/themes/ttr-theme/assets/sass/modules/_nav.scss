@@ -1,0 +1,80 @@
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+	margin-top: em(10px);
+	margin-bottom: em(10px);
+  max-width: 900px;
+  text-align: center;
+
+  @include mq(small) {
+    width: 90%;
+    text-align: left;
+  }
+  .nav__logo {
+    padding-right: 30px;
+    border-right: 1px solid $yellow;
+
+    @include mq(small) {
+      padding-right: 0;
+      border: 0;
+    }
+  }
+
+
+  @include e(item) {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 0;
+    @include mq(small) {
+      display: none;
+      margin-right: 0;
+    }
+    @include mq(medium) {
+      margin-right: em(30px);
+    }
+    @include mq(large) {
+      margin-right: em(56px);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      @extend %nav-item-link;
+      color: $white;
+      &:hover {
+        @extend %nav-item-on;
+      }
+      @include m(active) {
+
+      }
+    }
+    .active {
+      color: $yellow;
+    }
+
+
+  }
+}
+
+
+.mobile-show {
+  display: inline-block;
+}
+
+.navbar.active {
+  .nav__item {
+    &:nth-child(n+3){
+      display: block;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+
+  }
+}
+
+
+

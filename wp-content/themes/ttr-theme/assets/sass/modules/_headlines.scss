@@ -1,0 +1,50 @@
+// ==========================================================================
+// Headlines
+// ==========================================================================
+
+.section__header {
+    //margin-bottom: em(52px);
+    .headline-paragraph p {
+        font-family: 'Roboto-light';
+    }
+}
+
+.about_section {
+	.headline-primary--grouped {
+		padding: 0;
+		margin: 0;
+		border-bottom: 0;
+	}
+	.rule {
+		display: block !important;
+	}
+}
+
+
+.headline {
+    &-primary {
+        @extend %hdln-prim;
+        margin-bottom: em(70px, 42px);
+        @include m(grouped) {
+            @extend %hdln-prim;
+            margin-bottom: 0;
+            border-bottom: 2px solid black;
+            display: inline-block;
+            padding-bottom: em(10px);
+            margin-bottom: em(25px);
+        }
+
+        @include m(grouped--white) {
+            color: $white;
+        }
+    }
+    &-secondary {
+        @extend %hdln-sec;
+        margin-bottom: em(22px, 24px);
+        @include m(grouped) {
+            @extend %hdln-sec;
+            margin-top: 0;
+            margin-bottom: em(8px);
+        }
+    }
+}
