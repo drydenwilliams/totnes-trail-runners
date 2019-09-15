@@ -280,13 +280,64 @@
     Shop
   </section> -->
 
-  <!-- <section class="content-block">
-    Insta-piration
+  <section class="content-block standard-block no-pad-top">
+            <div class="line-header">
+            <h2>Insta-spiration</h2>
+            </div>
+  </section>
 
-    What and who we find inspiring on instagram
 
-    https://www.instagram.com/cotezi/
-  </section> -->
+  <section class="content-block">
+  <div class="hero-slider__wrapper">
+    <div class="hero-slider">
+      
+    <?php
+          $args = array(
+            'post_type' => 'instaspiration',
+            'posts_per_page' => 4,
+            'orderby' => 'post_date',
+	          'order' => 'DESC',
+          );
+          $category_posts = new WP_Query($args);
+
+          if($category_posts->have_posts()) : 
+              while($category_posts->have_posts()) : 
+                $category_posts->the_post();
+        ?>
+
+        <article>
+
+        <?php if (has_post_thumbnail()) : ?>
+              <?php endif; ?>
+
+        <figure class="insta-spiration"> 
+          <a href="<?php echo '//instagram.com/p/' . get_field('photoid'); ?>" target="_blank">
+            <?php the_post_thumbnail(); ?>
+            <div class="hover-over">
+              <div style="width: 40px; margin-bottom: 10px;">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ig-logo.svg" />
+              </div>
+<h5><?php echo '@' . get_field('username'); ?></h5>
+              </div>
+          </a>
+         
+        </figure>
+
+          </article>   
+
+        <?php
+              endwhile;
+          else: 
+        ?>
+
+              Oops, there are no posts.
+
+        <?php
+          endif;
+          wp_reset_postdata();
+        ?>
+        </div>
+  </section>
 </main>
 
 

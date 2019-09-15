@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
 
   $('.hero-slider').slick({
     arrows: true,
+    dots: false,
     infinite: false,
     speed: 300,
     slidesToShow: 4,
@@ -57,7 +58,7 @@ jQuery(document).ready(function($) {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+          dots: false
         }
       },
       {

@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
-<main class="content-block p-5">
-	<div class="row medium-gutters">
+<main class="content-block">
+	<div class="container-fluid">
+  <div class="row medium-gutters">
     <div class="col-md-8 order-md-2">
     <article class="blog-post">
 
@@ -84,6 +85,7 @@ if ( ! empty( $categories ) ) {
   <div>share twitter</div>
 </div>
     </aside>
+</div>
 </div>
 </main>
 

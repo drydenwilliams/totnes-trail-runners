@@ -392,6 +392,39 @@ function my_custom_post_type_news() {
   }
   add_action( 'init', 'custom_post_type_partnership' );
 
+  function custom_post_type_insta() {
+    $labels = array(
+      'name'               => _x( 'instaspiration', 'post type general name' ),
+      'singular_name'      => _x( 'instaspiration', 'post type singular name' ),
+      'add_new'            => _x( 'Add New', 'book' ),
+      'add_new_item'       => __( 'Add New instaspiration' ),
+      'edit_item'          => __( 'Edit instaspiration' ),
+      'new_item'           => __( 'New instaspiration' ),
+      'all_items'          => __( 'All News' ),
+      'view_item'          => __( 'View instaspiration' ),
+      'search_items'       => __( 'Search News' ),
+      'not_found'          => __( 'No instaspiration found' ),
+      'not_found_in_trash' => __( 'No instaspiration found in the Trash' ),
+      'menu_name'          => 'instaspiration'
+    );
+    $args = array(
+      'labels'        => $labels,
+      'description'   => 'Holds our instaspiration and product specific data',
+      'public'        => true,
+      'menu_position' => 5,
+      'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+      'has_archive'  => true,
+      'taxonomies' => array( 'category' ),
+    );
+    register_post_type( 'instaspiration', $args ); 
+  }
+  add_action( 'init', 'custom_post_type_insta' );
+
+
+
+
+  
+
 
   function create_tag_taxonomies() 
 {

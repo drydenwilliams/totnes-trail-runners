@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 
 
-<main class="content-block p-5">
+<main class="content-block ">
+<div class="container-fluid">
 	<div class="row medium-gutters">
 		<div class="col-md-2">
 		<ul>
@@ -33,6 +34,7 @@
 </article><!-- #post-## -->
 
 <?php endwhile; ?>
+	</div>
 	</div>
 	</div>
 </main>

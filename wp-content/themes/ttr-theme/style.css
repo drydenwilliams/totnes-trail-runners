@@ -83,6 +83,7 @@ blockquote {
 
 .site-header {
   background-color: #fff;
+  /* border-bottom: 1px solid #d1d1d1; */
 }
 
 .container-fluid {
@@ -1025,7 +1026,7 @@ margin-bottom: 20px;
 .site-footer {
   position: relative;
   padding: 100px 0;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   /* background-image: url('./assets/images/contoures-dark.png'); */
 }
 
@@ -1038,7 +1039,11 @@ margin-bottom: 20px;
   bottom: 0;
   right: 0;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
+}
+
+.site-footer .contact {
+  margin-bottom: 20px;
 }
 
 .bg-contours {
@@ -1436,4 +1441,37 @@ input[type="text"] {
 }
 
 .hero-slider__wrapper {
+}
+
+
+.single-post aside,
+.page aside {
+  border-right: 1px solid #d1d1d1;
+}
+
+.insta-spiration {
+  position: relative;
+}
+
+.insta-spiration:hover .hover-over{
+  visibility: visible;
+  opacity: 1;
+  
+}
+
+.hover-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  color: white;
+  transition: opacity 150ms ease-in-out;
+  visibility: hidden;
+  flex-direction: column;
 }
