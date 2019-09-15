@@ -6,7 +6,7 @@
     <article class="blog-post">
 
     <header class="">
-  <div class="container">
+  <div class="">
     <h1 class="h1 dm-serif jumbotron-heading">
       <?php the_title(); ?>
     </h1>

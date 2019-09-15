@@ -19,7 +19,7 @@
 
   <header class="site-header">
   <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand" href="<?php echo site_url(); ?>"><?php bloginfo('name'); ?></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -28,11 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav ml-auto">
 
-            <?php if ( is_user_logged_in() ) : ?>
-              <li class="nav-item nav-item-logout"><a class="nav-link" href="<?php echo wp_logout_url(); ?>">Logout</a><li>
-            <?php else : ?>
-              <li class="nav-item nav-item-login"><a class="nav-link" data-toggle="modal" data-target="#loginModal">Login</a><li>
-            <?php endif; ?>
+          
 
             <?php
             wp_nav_menu(

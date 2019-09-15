@@ -7,15 +7,22 @@
 function theme_styles() {
     wp_enqueue_style( 'google_web_fonts', 'https://fonts.googleapis.com/css?family=DM+Serif+Text|Quicksand&display=swap' );
     wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+    // wp_enqueue_style( 'slick-slider-styles', get_stylesheet_directory_uri() . '/assets/css/slick.min.css' ); 
+    // wp_enqueue_style( 'slick-slider-theme-styles', get_stylesheet_directory_uri() . '/assets/css/slick-theme.min.css' );  
+    wp_enqueue_style( 'slick_css', '//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css' );
+    wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/assets/css/fa-all.min.css' );
+    
     wp_enqueue_style( 'style_css', get_stylesheet_uri());
-
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_styles');
 
 function my_theme_scripts() {
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/vendor/jquery.min.js', NULL, '1.11.0', false);
     wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/assets/js/vendor/bootstrap.min.js', array('jquery'));
-    wp_enqueue_script( 'my_custom_js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'));
+    wp_enqueue_script('slick-slider-js', get_stylesheet_directory_uri() . '/assets/js/vendor/slick.min.js', array('jquery'), '', true );
+    // wp_enqueue_script( 'slick_js', '//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js', array('jquery'), '', true );
+    wp_enqueue_script( 'my_custom_js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery', 'slick-slider-js'), '', true);
 }
 
 add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
@@ -81,55 +88,6 @@ add_filter( 'gform_field_choice_markup_pre_render', function ( $choice_markup, $
 }, 10, 4 );
 
 
-// =====================
-// Featured post checkbox
-// =====================
-function sm_custom_meta() {
-    add_meta_box( 'sm_meta', __( 'Featured Posts', 'sm-textdomain' ), 'sm_meta_callback', 'post' );
-}
-function sm_meta_callback( $post ) {
-    $featured = get_post_meta( $post->ID );
-    ?>
- 
-	<p>
-    <div class="sm-row-content">
-        <label for="meta-checkbox">
-            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $featured['meta-checkbox'] ) ) checked( $featured['meta-checkbox'][0], 'yes' ); ?> />
-            <?php _e( 'Featured this post', 'sm-textdomain' )?>
-        </label>
-        
-    </div>
-</p>
- 
-    <?php
-}
-add_action( 'add_meta_boxes', 'sm_custom_meta' );
-
-
-/**
- * Saves the custom meta input
- */
-function sm_meta_save( $post_id ) {
- 
-    // Checks save status
-    $is_autosave = wp_is_post_autosave( $post_id );
-    $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'sm_nonce' ] ) && wp_verify_nonce( $_POST[ 'sm_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
- 
-    // Exits script depending on save status
-    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
-        return;
-    }
- 
- // Checks for input and saves
-if( isset( $_POST[ 'meta-checkbox' ] ) ) {
-    update_post_meta( $post_id, 'meta-checkbox', 'yes' );
-} else {
-    update_post_meta( $post_id, 'meta-checkbox', '' );
-}
- 
-}
-add_action( 'save_post', 'sm_meta_save' );
 
 // =====================
 // Filter

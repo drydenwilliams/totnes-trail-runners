@@ -5,16 +5,16 @@
 
 
 
-<main>
-  <section class="content-block p-5 feature-block">
+<main class="container-fluid">
+  <section class="content-block feature-block">
     <div class="">
       <div class="row medium-gutters">
-        <div class="col-lg-6 featured-article">
+        <div class="col-md-8 col-xl-6 featured-article">
         <?php
   $args = array(
         'posts_per_page' => 1,
-        'meta_key' => 'meta-checkbox',
-        'meta_value' => 'yes'
+        'meta_key'		=> 'featured',
+	'meta_value'	=> true
     );
     $featured_query = new WP_Query($args);
  
@@ -52,7 +52,7 @@
       ?>
 
         </div>
-        <div class="col-lg-4 posts">
+        <div class="col-md-4 col-xl-4 posts">
         <?php
           $args = array(
             'post_type' => 'post',
@@ -103,8 +103,9 @@
         ?>
 
         </div>
-        <div class="col-lg-2 news">
-        <h4 class="text-center text-uppercase">Trail news</h4>
+        <div class="col-xl-2 news">
+        <h4 class="text-center text-uppercase news-title ">Trail news</h4>
+          <div class="news-wrapper">
           <?php
             $args = array(
               'post_type' => 'news',
@@ -145,14 +146,26 @@
           ?>
 
         </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="content-block p-5">
-    Most recent
-    <div class="row medium-gutters">
+  <section class="content-block standard-block no-pad-top ">
+            <div class="line-header">
+            <h2>Most recent</h2>
+            </div>
+  </section>
 
+  <section class="content-block">
+    
+  <div class="hero-slider__wrapper">
+  <!-- <button type="button" class="slick-prev">Previous</button>
+  <button type="button" class="slick-next">Next</button> -->
+
+    <div class="hero-slider">
+
+    
     <?php
           $args = array(
             'post_type' => 'post',
@@ -202,23 +215,30 @@
           endif;
           wp_reset_postdata();
         ?>
+          </div>
         </div>
   </section>
 
-  <section class="content-block p-5">
-    Partnership
+  <section class="content-block standard-block no-pad-top">
+            <div class="line-header">
+            <h2>Partnership</h2>
+            </div>
+  </section>
+
+  <section class="content-block">
     <div class="row medium-gutters align-items-center">
 
     <?php
   $args = array(
         'posts_per_page' => 1,
         'post_type' => 'partnerships',
-        'meta_key' => 'meta-checkbox',
-        'meta_value' => 'yes'
+        'meta_key'		=> 'featured',
+	'meta_value'	=> true
     );
     $featured_query = new WP_Query($args);
  
     if ($featured_query->have_posts()): while($featured_query->have_posts()): $featured_query->the_post(); ?>
+    
       
       <div class="col-md-6">
       <figure> 
@@ -252,21 +272,21 @@
     </div>
   </section>
 
-  <!-- <section class="content-block p-5">
+  <!-- <section class="content-block">
     Events
   </section>
 
-  <section class="content-block p-5">
+  <section class="content-block">
     Shop
   </section> -->
 
-  <section class="content-block p-5">
+  <!-- <section class="content-block">
     Insta-piration
 
     What and who we find inspiring on instagram
 
     https://www.instagram.com/cotezi/
-  </section>
+  </section> -->
 </main>
 
 

@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {
 
+
   /*
    * Utility to scroll to an anchor smoothly
    * 
@@ -37,60 +38,47 @@ jQuery(document).ready(function($) {
     
   });
 
-  /*
-   * For filters checkboxes because we can't easily change the markup
-   * 
-   */
-  $('.cat-item label').click(function (evt) {
-    evt.preventDefault();
-    console.log($(this).hasClass('active'));
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(this).children().prop('checked', false);
-    } else {
-      $(this).addClass('active');
-      $(this).children().prop('checked', true);
-    }
+
+//   $('.hero-slider').slick({
+//     autoplay: true,
+//     arrows: false, //Set these to whatever you need
+// });
+
+  $('.hero-slider').slick({
+    arrows: true,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
   });
 
-  /*
-   * For toggling the filters open/close
-   * 
-   */
-  $('.filters-btn').click(function () {
-    if ($('.filters-btn-wrapper--active').hasClass('filters-btn-wrapper--active')) {
-      $('.filters-btn-wrapper').removeClass('filters-btn-wrapper--active');
-    } else {
-      $('.filters-btn-wrapper').addClass('filters-btn-wrapper--active');
-    }
-    $('.filters').slideToggle();
-  });
-
-  /*
-   * Opneing the modal
-   * 
-   */
-  $('#loginModal').on('shown.bs.modal', function () {
-    $('[data="modal"]').trigger('focus')
-  })
-
-  /*
-   * Once the user has registered we need to open the login modal so they can login
-   * 
-   */
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-  const userRegistered = getParameterByName('registered');
-  if (userRegistered) {
-    $('#loginModal').modal('show');
-  }
 
 });
